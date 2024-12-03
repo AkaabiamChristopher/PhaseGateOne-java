@@ -1,29 +1,47 @@
 import java.util.Scanner;
 
-public class StudentGrade{
-public static void main(String[] args){
-Scanner scanner = new Scanner(System.in);
+public class StudentGrade {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-System.out.print("Enter number of student:");
-int numberOfStident = scanner.nextInt();
+        System.out.print("How many student do you hava: ");
+        int numberofstudent = scanner.nextInt();
 
-System.out.print("Enter number of subjects:");
-int numberOfSubject = scanner.nextInt();
+        System.out.print("how many subject do you have: ");
+        int numberofsubject = scanner.nextInt();
 
-int [][] studenGrade = new int[numberOfStident][ numberOfSubject];
- int student;
- int subject;
-for(int sudent = 0;numberOfStident;count++){
+        System.out.println("saving >>>>>>>>>>>>>>>>>>>>>>>>\nsaved successfully");
+        
 
-	for(int subject = 0; subject < numberOfStident; subjec++){
-	
 
-	}
+
+        int[][] scores = new int[numberofstudent][numberofsubject];
+
+        for (int count = 0; count < numberofstudent; count++) {
+            System.out.println("Enter scores for student " + (count + 1) + ":");
+            for (int i = 0; i < numberofsubject; i++) {
+                while (true) {
+                    System.out.print("Subject " + (i + 1) + ": ");
+                    int score = scanner.nextInt();
+                    if (score >= 0 && score <= 100) {
+                        scores[count][i] = score;
+                        break;
+                    } else {
+                        System.out.println("Score must be between 0 and 100. Enter again.");
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < numberofstudent; i++) {
+            System.out.println("Scores for student " + (i + 1) + ":");
+            for (int j = 0; j < numberofsubject; j++) {
+                System.out.print(scores[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
 }
 
+    
 
 
-
-
-     }
-}
